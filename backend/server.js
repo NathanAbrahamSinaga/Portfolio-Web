@@ -17,6 +17,10 @@ app.use(cors({ origin: '*',
 }));
 
 app.get('/', (req, res) => {
+  res.send('Portfolio API is running');
+});
+
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'docs', 'index.html'));
 });
 
