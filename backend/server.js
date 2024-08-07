@@ -11,7 +11,10 @@ const cors = require('cors');
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'docs')));
-app.use(cors());
+app.use(cors({ origin: '*',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'docs', 'index.html'));
