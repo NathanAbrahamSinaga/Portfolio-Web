@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="font-sans">
     <!-- Navbar -->
@@ -196,31 +196,31 @@
         document.getElementById('mobileMenuToggle').addEventListener('click', function() {
             document.getElementById('mobileMenu').classList.toggle('hidden');
         });
-
+    
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
             const feedback = document.getElementById('formFeedback');
-
+    
             if (!name || !email || !message) {
                 feedback.textContent = 'All fields are required.';
                 feedback.classList.remove('hidden');
                 return;
             }
-
+    
             if (!/^\S+@\S+\.\S+$/.test(email)) {
                 feedback.textContent = 'Please provide a valid email address.';
                 feedback.classList.remove('hidden');
                 return;
             }
-
+    
             // If validation passes, hide the feedback message
             feedback.classList.add('hidden');
-
+    
             // Proceed with form submission using fetch API
-            fetch('portfolio-web-api-zeta.vercel.app/api/contact', {
+            fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -244,8 +244,8 @@
                 feedback.classList.remove('hidden');
             });
         });
-
     </script>
+    
 
 </body>
 </html>
