@@ -11,7 +11,9 @@ const cors = require('cors');
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'docs')));
-app.use(cors({ origin: '*',
+
+app.use(cors({
+  origin: ['https://nathanabrahamsinaga.vercel.app'],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
