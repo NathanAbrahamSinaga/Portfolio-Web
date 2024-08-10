@@ -10,10 +10,7 @@
       },
       {
         "source": "/",
-        "destination": [
-          "/docs/index.html",
-        "/docs/portfolio.html"
-        ]
+        "destination": ["/docs/index.html"]
       }
     ]
   }
